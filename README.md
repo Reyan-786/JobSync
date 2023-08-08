@@ -1,5 +1,7 @@
 # JobSync
 
+<img src='./JobSync.png'>
+
 JobSync is a web application that allows users to search for job listings based on job titles and receive real-time job postings. It's built using Flask, a Python web framework, and integrates with the Adzuna Jobs API to fetch and display job listings.
 
 ## Features
