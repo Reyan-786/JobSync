@@ -1,0 +1,64 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa; /* Light blue background */
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff; /* White container background */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #007bff; /* Blue header text color */
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333; /* Black label text color */
+}
+
+input[type="text"],
+input[type="email"] {
+    /* Styles for text inputs */
+}
+
+button[type="submit"] {
+    background-color: #007BFF; /* Blue button background */
+    color: #fff; /* White button text color */
+    /* Other button styles */
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    /* Other hover styles */
+}
+
+ul {
+    /* Styles for unordered lists */
+}
+
+li {
+    /* Styles for list items */
+}
+
+a {
+    color: #007BFF; /* Blue link color */
+    text-decoration: none;
+}
+
+.spinner {
+    /* Styles for spinner */
+}
+
+@keyframes spin {
+    /* Keyframes for spinner animation */
+}

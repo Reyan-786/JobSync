@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Job Sync</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+            
+    <script>
+        function showSpinner() {
+            document.getElementById("loadingSpinner").style.display = "block";
+        }
+    
+        document.getElementById("jobForm").addEventListener("submit", showSpinner);
+    </script>
+            
+</head>
+<body>
+   
+    <div class="container">
+        <h1>JobSync</h1>
+        <div class="d-flex justify-content-center"> 
+            <form id="jobForm" method="post" class="w-50 text-center"> 
+                <label for="job_title">Job Title:</label>
+                <input type="text" id="job_title" name="job_title" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <button type="submit" class="btn btn-primary">Search and Email</button>
+            </form>
+        </div>
+
+        <div style="margin-top: 20px;"></div>
+
+        {% if job_data %}
+        <h2 class="mt-5">Job Listings</h2>
+        <div class="row">
+            {% for job in job_data['results'] %}
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ job['title'] }}</h5>
+                        <p class="card-text">Company: {{ job['company']['display_name'] }}</p>
+                        <p class="card-text">Location: {{ job['location']['display_name'] }}</p>
+                        <p class="card-text">Salary: {{ job['salary_min'] }} - {{ job['salary_max'] }}</p>
+                        <p class="card-text">{{ job['description'] | truncate(200) }}</p>
+                        <a href="{{ job['redirect_url'] }}" class="btn btn-primary" target="_blank">View Details</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+    </div>
+</body>
+</html>
