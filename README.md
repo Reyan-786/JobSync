@@ -35,5 +35,8 @@ JobSync is a web application that allows users to search for job listings based 
 3. The application will display a loading spinner while fetching job listings.
 4. After a delay of 3 seconds, the job listings will be displayed in a visually appealing format.
 
-
+## Future Objectives 
+1. Implement a more stable backend.
+2. Add a login page and database to store all the queries.
+3. Add twilio to send the loaded job postings to the user. 
 
